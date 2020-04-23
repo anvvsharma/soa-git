@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsdLocal="http://anvvsharma.wordpress.com/ns/2018/05/12/EmpDetails"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://anvvsharma.wordpress.com/ns/2018/05/12/EmpDetails"
+            elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+    <xsd:element name="EmpDetails" type="xsdLocal:_INTEmpDetails"/>
+    <xsd:complexType name="_INTEmpDetails">
+        <xsd:sequence>
+            <xsd:element name="EmpId" type="xsd:int"/>
+            <xsd:element name="EmpName" type="xsdLocal:string10"/>
+            <xsd:element name="EmpSalary" type="xsd:int"/>
+            <xsd:element name="Designation" type="xsdLocal:string30"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="string30">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="string10">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
