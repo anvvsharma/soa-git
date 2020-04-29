@@ -40,8 +40,8 @@
     <composite.revision>1.0</composite.revision>
     <composite.partition>default</composite.partition>
     <serverUrl>${oracleServerUrl}</serverUrl>
-    <user>${bamboo.oracleUsername}</user>
-    <password>${bamboo.oraclePassword}</password>
+    <user>${oracleUsername}</user>
+    <password>${oraclePassword}</password>
     <overwrite>true</overwrite>
     <forceDefault>true</forceDefault>
     <regenerateRulebase>false</regenerateRulebase>
