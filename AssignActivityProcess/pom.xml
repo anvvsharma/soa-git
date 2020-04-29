@@ -68,8 +68,8 @@
           <composite>${scac.input}</composite>
           <sarLocation>${scac.output.dir}/sca_${project.artifactId}_rev${project.version}.jar</sarLocation>
           <serverUrl>${serverUrl}</serverUrl>
-          <user>${user}</user>
-          <password>${password}</password>
+          <user>${bamboo.user}</user>
+          <password>${bamboo.password}</password>
           <!-- Note: compositeRevision is needed to package, revision is needed to undeploy -->
           <compositeRevision>${composite.revision}</compositeRevision>
           <revision>${composite.revision}</revision>
