@@ -67,7 +67,7 @@
           <compositeName>${project.artifactId}</compositeName>
           <composite>${scac.input}</composite>
           <sarLocation>${scac.output.dir}/sca_${project.artifactId}_rev${project.version}.jar</sarLocation>
-          <serverUrl>http://localhost:7005</serverUrl>
+          <serverUrl>${bamboo.serverUrl}</serverUrl>
           <user>weblogic</user>
           <password>welcome1</password>
           <!-- Note: compositeRevision is needed to package, revision is needed to undeploy -->
