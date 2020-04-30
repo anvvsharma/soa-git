@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <modules>
         <!-- Add project modules -->
-    	<!--<module>AssignActivityProcess</module>-->
+    	<module>AssignActivityProcess</module>
     	<module>DBAdapterProcess</module>
     </modules>
 </project>
