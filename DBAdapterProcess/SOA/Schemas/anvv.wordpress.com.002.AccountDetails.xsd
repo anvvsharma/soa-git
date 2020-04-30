@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsdLocal="http://anvvsharma.wordpress.com/ns/2018/05/12/AccountDetails"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://anvvsharma.wordpress.com/ns/2018/05/12/AccountDetails"
+            elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+    <xsd:element name="AccountDetails" type="xsdLocal:_INTAccountDetails"/>
+    <xsd:complexType name="_INTAccountDetails">
+        <xsd:sequence>
+            <xsd:element name="AccountId" type="xsd:int"/>
+            <xsd:element name="AccountNumber" type="xsdLocal:string30"/>
+            <xsd:element name="AccountType" type="xsdLocal:AccountType"/>
+            <xsd:element name="BankName" type="xsdLocal:string30"/>
+            <xsd:element name="BankBranch" type="xsdLocal:string30" nillable="true"/>
+            <xsd:element name="Country" type="xsdLocal:string30" nillable="true"/>
+            
+        </xsd:sequence>
+    </xsd:complexType>
+<xsd:simpleType name="AccountType">
+  <xsd:restriction base="xsd:string">
+    <xsd:enumeration value="Savings"/>
+    <xsd:enumeration value="Current"/>
+  </xsd:restriction>
+</xsd:simpleType>    
+    <xsd:simpleType name="string30">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

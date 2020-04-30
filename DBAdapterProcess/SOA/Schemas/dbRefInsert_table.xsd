@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRefInsert" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbRefInsert" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="EmpCollection" type="EmpCollection"/>
+   <xs:complexType name="EmpCollection">
+      <xs:sequence>
+         <xs:element name="Emp" type="Emp" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Emp">
+      <xs:sequence>
+         <xs:element name="empid" type="xs:long" nillable="true"/>
+         <xs:element name="empname" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="empsalary" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="designation" type="string20" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

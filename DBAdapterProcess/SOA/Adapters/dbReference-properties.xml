@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="HR.EMP:db_table_type">TABLE</entry>
+   <entry key="HR.EMP.DESIGNATION:db_column_not_null">false</entry>
+   <entry key="HR.EMP:db_column_3">DESIGNATION</entry>
+   <entry key="HR.EMP:db_column_2">EMPSALARY</entry>
+   <entry key="HR.EMP:db_column_1">EMPNAME</entry>
+   <entry key="HR.EMP.EMPID:db_column_not_null">true</entry>
+   <entry key="HR.EMP:db_column_0">EMPID</entry>
+   <entry key="HR.EMP.EMPNAME:db_column_type">VARCHAR2</entry>
+   <entry key="HR.EMP.EMPSALARY:db_column_type">VARCHAR2</entry>
+   <entry key="HR.EMP.EMPNAME:db_column_not_null">false</entry>
+   <entry key="HR.EMP.EMPID:db_column_size">20</entry>
+   <entry key="HR.EMP.DESIGNATION:db_column_type">VARCHAR2</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="HR.EMP.EMPNAME:db_column_size">20</entry>
+   <entry key="HR.EMP.EMPSALARY:db_column_size">20</entry>
+   <entry key="root_descriptor_alias">HR.EMP</entry>
+   <entry key="HR.EMP.EMPSALARY:db_column_not_null">false</entry>
+   <entry key="HR.EMP.DESIGNATION:db_column_size">20</entry>
+   <entry key="HR.EMP.EMPID:db_column_type">VARCHAR2</entry>
+</properties>

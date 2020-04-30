@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsdLocal="http://anvvsharma.wordpress.com/ns/2018/05/12/ResponseMessage"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://anvvsharma.wordpress.com/ns/2018/05/12/ResponseMessage"
+            elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+    <xsd:element name="responseMessage" type="xsdLocal:_INTResponseMessage"/>
+    <xsd:complexType name="_INTResponseMessage">
+        <xsd:sequence>
+            <xsd:element name="trackingId" type="xsd:int"/>
+            <xsd:element name="response" type="xsdLocal:_INTResponse"/>
+            <xsd:element name="responseCode" type="xsdLocal:_INTResponseCode"/>
+            <xsd:element name="responseMessage" type="xsdLocal:_INTMessage"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="_INTResponseCode">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="250"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="_INTMessage">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4000"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="_INTResponse">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

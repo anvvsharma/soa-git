@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsdLocal="http://anvvsharma.wordpress.com/ns/2018/05/12/ContactDetails"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://anvvsharma.wordpress.com/ns/2018/05/12/ContactDetails"
+            elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.02">
+    <xsd:element name="ContactDetails" type="xsdLocal:_INTContactDetails"/>
+    <xsd:complexType name="_INTContactDetails">
+        <xsd:sequence>
+            <xsd:element name="ContactId" type="xsdLocal:string10"/>
+            <xsd:element name="AccountId" type="xsdLocal:string10"/>
+            <xsd:element name="Address" type="xsdLocal:AddressType"/>
+            <xsd:element name="firstName" type="xsdLocal:string30"/>
+            <xsd:element name="LastName" type="xsdLocal:string30"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AddressType">
+        <xsd:sequence>
+            <xsd:element name="AddressLine1" type="xsdLocal:string30" nillable="true"/>
+            <xsd:element name="AddressLine2" type="xsdLocal:string30" nillable="true"/>
+            <xsd:element name="AddrPinCode" type="xsd:int"/>
+            <xsd:element name="AddrCity" type="xsdLocal:string30" nillable="true"/>
+            <xsd:element name="Country" type="xsdLocal:string30"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="string30">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="string10">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

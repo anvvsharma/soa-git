@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="DBAdapterBpel"
+             targetNamespace="http://xmlns.oracle.com/anvvsharma_wordpress_com/DBAdapterProcess/DBAdapterBpel"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:client="http://xmlns.oracle.com/anvvsharma_wordpress_com/DBAdapterProcess/DBAdapterBpel"
+             xmlns:ns1="http://anvvsharma.wordpress.com/ns/2018/05/12/EmpDetails"
+             xmlns:ns2="http://anvvsharma.wordpress.com/ns/2018/05/12/ResponseMessage"
+             xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	TYPE DEFINITION - List of services participating in this BPEL process
+	The default output of the BPEL designer uses strings as input and 
+	output to the BPEL Process. But you can define or import any XML 
+	Schema type and use them as part of the message types.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->   
+	<wsdl:types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://anvvsharma.wordpress.com/ns/2018/05/12/EmpDetails" schemaLocation="../Schemas/anvv.wordpress.com.004.EmpDetails.xsd" />
+		</schema>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema">
+			<import namespace="http://anvvsharma.wordpress.com/ns/2018/05/12/ResponseMessage" schemaLocation="../Schemas/anvv.wordpress.com.001.Response.xsd" />
+		</schema>
+	</wsdl:types>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	MESSAGE TYPE DEFINITION - Definition of the message types used as 
+	part of the port type defintions
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->      
+	<wsdl:message name="DBAdapterBpelRequestMessage">
+		<wsdl:part name="payload" element="ns1:EmpDetails" />
+	</wsdl:message>
+	<wsdl:message name="DBAdapterBpelResponseMessage">
+		<wsdl:part name="payload" element="ns2:responseMessage" />
+	</wsdl:message>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PORT TYPE DEFINITION - A port type groups a set of operations into
+	a logical service unit.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<!-- portType implemented by the DBAdapterBpel BPEL process -->
+	<wsdl:portType name="DBAdapterBpel">
+		<wsdl:operation name="process">
+			<wsdl:input  message="client:DBAdapterBpelRequestMessage" />
+			<wsdl:output message="client:DBAdapterBpelResponseMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	PARTNER LINK TYPE DEFINITION
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --> 
+	<plnk:partnerLinkType name="DBAdapterBpel">
+		<plnk:role name="DBAdapterBpelProvider" portType="client:DBAdapterBpel"/>
+	</plnk:partnerLinkType>
+</wsdl:definitions>
