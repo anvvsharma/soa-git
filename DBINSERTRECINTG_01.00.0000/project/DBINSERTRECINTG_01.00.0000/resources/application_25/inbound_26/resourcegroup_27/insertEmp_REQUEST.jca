@@ -1,0 +1,30 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/atpdatabase/insertEmp_REQUEST/types" name="insertEmp_REQUEST_ptt" adapter="atpdatabase" wsdlLocation="insertEmp_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="eis/DB/ATPDEMODB">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.tip.adapter.db.DBManagedConnectionFactory">
+      <property name="IsSSLEnabled" value="true"/>
+      <property name="MaxConnections" value="35"/>
+      <property name="RuntimeJKSUnzipLoc" value="ATPDEMODB"/>
+      <property name="UsesBatchWriting" value="true"/>
+      <property name="ConnectionString" value="2B731F769540C4FE1208361ADF9496D40EA793A78FF9C66917C6FD194B701F2C7B3466EAF9A2F9D4D5360A3CC554B9A69D051A6B0F46DB19BE9F004C7D132420A22673AC7CC6746DC9B30791A2DFD38B7CCEE4FFE7CFE72854E493BA7F95A128056C0FD9AD6776EA78334AC6948CD6F263996D82BF83C465B9383AA6E1224FE112A60A028D5C043F25A77CB7E91E45FB431338A4C394D0283D6A96059297ACB5A57E2EA366892D06503C7C2DF9F9EC7112F41094A6DBF017A0A29017FCA785B16449DC20DBDEE5B673A244F4E6EE96B26F918210B8403F56DB04D65A803E7F7EB38934A97AF1FABFEFF802751EE0CF7BEF084F83E825463397B6BB894E54FFA01E57A00580897AFFACCE2B2A5FC4FE11F108A5241D05C14680630AC613455ABC5C4E23F8C59A618CDD6445C0AA3E1C368AECA7CD3E440CB623C5B02DC11A43C91E0001D0F8224651FC80CB77A21BAC18AAE0F73D251B20077B3A98CC3908D69763B27AE64F33AD69C8BD94B1982C7826"/>
+      <property name="MaxReadConnections" value="15"/>
+      <property name="ConnectionUniqueKey" value="82EFBB8270A8962A5FFF75C911B90B1EBB0A856832DBF53BBABB314FEA0E973E"/>
+      <property name="PlatformClassName" value="org.eclipse.persistence.platform.database.Oracle10Platform"/>
+      <property name="csfkey" value="2b195f4f7d206bbeeaee67a554efad2f35ec61a738c00808f1d674545b5941ea"/>
+      <property name="DriverClassName" value="oracle.jdbc.OracleDriver"/>
+      <property name="MinConnections" value="2"/>
+      <property name="MinReadConnections" value="1"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-interaction portType="insertEmp_REQUEST_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="insertEmp.Emp"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="MappingsMetaDataURL" value="insertEmp_REQUEST-or-mappings.xml"/>
+      <property name="OutputCompletedXml" value="false"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DmlType" value="merge"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+</adapter-config>

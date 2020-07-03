@@ -1,0 +1,35 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/atpdatabase/fetchemp_REQUEST/types" name="fetchemp_REQUEST_ptt" adapter="atpdatabase" wsdlLocation="fetchemp_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="eis/DB/ATPDEMODB_ONPREM">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.tip.adapter.db.DBManagedConnectionFactory">
+      <property name="MaxConnections" value="35"/>
+      <property name="UsesBatchWriting" value="true"/>
+      <property name="ConnectionString" value="2B731F769540C4FE1208361ADF9496D47ACC177B80228677160AA8BC80012829DAA4F687344E0FD13015B8A318D994AC"/>
+      <property name="MaxReadConnections" value="15"/>
+      <property name="ConnectionUniqueKey" value="7422019E90528513875E059B242E060CD4366CF0812EA17A7F47C732624B7FB6"/>
+      <property name="PlatformClassName" value="org.eclipse.persistence.platform.database.Oracle10Platform"/>
+      <property name="csfkey" value="f85dcbeadc2c2dfccc5f97e364c9222906663539a1424b1c66a4795c732d92ac"/>
+      <property name="DriverClassName" value="oracle.jdbc.OracleDriver"/>
+      <property name="MinConnections" value="2"/>
+      <property name="MinReadConnections" value="1"/>
+      <property name="csfMap" value="oracle.cloud.adapter"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="fetchemp_REQUEST_ptt" operation="receive" onpremise="true" agent="ANVV_AGENT">
+    <activation-spec className="oracle.tip.adapter.db.DBActivationSpec">
+      <property name="UseLocalWorkManager" value="true"/>
+      <property name="MaxRaiseSize" value="1"/>
+      <property name="MarkReadColumn" value="ACTIVE"/>
+      <property name="PollingInterval" value="1"/>
+      <property name="DescriptorName" value="fetchemp.Emp"/>
+      <property name="MarkReadValue" value="Y"/>
+      <property name="MarkRejectedValue" value="N"/>
+      <property name="MaxTransactionSize" value="1"/>
+      <property name="PollingStrategy" value="LogicalDeletePollingStrategy"/>
+      <property name="MappingsMetaDataURL" value="fetchemp_REQUEST-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="MarkUnreadValue" value="U"/>
+      <property name="QueryName" value="fetchempSelect"/>
+      <property name="NumberOfThreads" value="5"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>
