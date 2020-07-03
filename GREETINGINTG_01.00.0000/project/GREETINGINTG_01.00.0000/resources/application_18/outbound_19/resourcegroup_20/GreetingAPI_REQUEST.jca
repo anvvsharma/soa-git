@@ -1,0 +1,33 @@
+<adapter-config xsdTargetNamespace="http://xmlns.oracle.com/cloud/adapter/REST/GreetingAPI_REQUEST/types" name="GreetingAPI_REQUESTPortType" adapter="rest" wsdlLocation="GreetingAPI_REQUEST.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  <connection-factory location="cloud/CloudAdapter">
+    <non-managed-connection managedConnectionFactoryClassName="oracle.cloud.connector.rest.RestAdapterConnectionFactory">
+      <property name="securityPolicy" value="BASIC_AUTH"/>
+      <property name="cloud.adapter.sdk.version" value="19.4.3"/>
+      <property name="cloud.adapter.plugin.version" value="19.4.3"/>
+    </non-managed-connection>
+  </connection-factory>
+  <endpoint-activation portType="GreetingAPI_REQUESTPortType" operation="execute">
+    <activation-spec className="oracle.tip.adapter.cloud.CloudActivationSpec">
+      <property name="targetOperation" value="execute"/>
+      <property name="allowChangeDefaultNamespace" value="false"/>
+      <property name="responseJsonTopLevelArray" value="false"/>
+      <property name="HTTPHeadersAdded" value="true"/>
+      <property name="ResponseMediaType" value="application/json"/>
+      <property name="ResponseSample" value="{ &quot;greeting&quot;:&quot;&quot; }"/>
+      <property name="HttpVerb" value="GET"/>
+      <property name="ResponseElementName" value="response-wrapper"/>
+      <property name="integrationWSDLNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/GreetingAPI_REQUEST"/>
+      <property name="copyFaultFromModel" value="true"/>
+      <property name="generatePartnerLink" value="false"/>
+      <property name="isResponseRawBytes" value="false"/>
+      <property name="ResponseElementNS" value="http://xmlns.oracle.com/cloud/adapter/REST/GreetingAPI/types"/>
+      <property name="invocationStyle" value="REQUEST_RESPONSE"/>
+      <property name="QueryParameters" value="name"/>
+      <property name="operations" value="default"/>
+      <property name="postQueryParamsAsContent" value="false"/>
+      <property name="targetOperation" value="execute"/>
+      <property name="integrationSchemaNamespace" value="http://xmlns.oracle.com/cloud/adapter/REST/GreetingAPI_REQUEST/types"/>
+      <property name="ResourceURI" value="/greeting"/>
+    </activation-spec>
+  </endpoint-activation>
+</adapter-config>
