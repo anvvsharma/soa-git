@@ -9,6 +9,6 @@
         <!-- Add project modules -->
     	<!--<module>AssignActivityProcess</module>
     	<module>DBAdapterProcess</module>-->
-        <module>DBINSERTRECINTG_01.00.0000</module>        
+        <module>GREETINGINTG_01.00.0000</module>        
     </modules>
 </project>
